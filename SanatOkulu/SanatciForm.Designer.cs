@@ -51,6 +51,7 @@ namespace SanatOkulu
             this.BtnEkle.TabIndex = 1;
             this.BtnEkle.Text = "Ekle";
             this.BtnEkle.UseVisualStyleBackColor = true;
+            this.BtnEkle.Click += new System.EventHandler(this.BtnEkle_Click);
             // 
             // txtAd
             // 
