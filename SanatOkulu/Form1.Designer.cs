@@ -49,6 +49,7 @@ namespace SanatOkulu
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiSanatcilar = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnIptal = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboYeniSanatci)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -67,6 +68,7 @@ namespace SanatOkulu
             // 
             this.groupBox1.Controls.Add(this.cboSanatci);
             this.groupBox1.Controls.Add(this.pboYeniSanatci);
+            this.groupBox1.Controls.Add(this.btnIptal);
             this.groupBox1.Controls.Add(this.btnEkle);
             this.groupBox1.Controls.Add(this.mtbYil);
             this.groupBox1.Controls.Add(this.label3);
@@ -106,7 +108,7 @@ namespace SanatOkulu
             this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEkle.Location = new System.Drawing.Point(112, 247);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(123, 52);
+            this.btnEkle.Size = new System.Drawing.Size(97, 29);
             this.btnEkle.TabIndex = 3;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -161,6 +163,8 @@ namespace SanatOkulu
             this.lvwEserler.TabIndex = 2;
             this.lvwEserler.UseCompatibleStateImageBehavior = false;
             this.lvwEserler.View = System.Windows.Forms.View.Details;
+            this.lvwEserler.DoubleClick += new System.EventHandler(this.lvwEserler_DoubleClick);
+            this.lvwEserler.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvwEserler_KeyDown);
             // 
             // columnHeader1
             // 
@@ -193,6 +197,17 @@ namespace SanatOkulu
             this.tsmiSanatcilar.Size = new System.Drawing.Size(70, 20);
             this.tsmiSanatcilar.Text = "Sanatçılar";
             this.tsmiSanatcilar.Click += new System.EventHandler(this.tsmiSanatcilar_Click);
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIptal.Location = new System.Drawing.Point(6, 247);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(97, 29);
+            this.btnIptal.TabIndex = 3;
+            this.btnIptal.Text = "İptal";
+            this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -235,6 +250,7 @@ namespace SanatOkulu
         private System.Windows.Forms.ComboBox cboSanatci;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSanatcilar;
+        private System.Windows.Forms.Button btnIptal;
     }
 }
 
