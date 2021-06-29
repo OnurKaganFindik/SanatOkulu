@@ -192,6 +192,7 @@ namespace SanatOkulu
             this.tsmiSanatcilar.Name = "tsmiSanatcilar";
             this.tsmiSanatcilar.Size = new System.Drawing.Size(70, 20);
             this.tsmiSanatcilar.Text = "Sanatçılar";
+            this.tsmiSanatcilar.Click += new System.EventHandler(this.tsmiSanatcilar_Click);
             // 
             // Form1
             // 

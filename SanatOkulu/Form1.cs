@@ -27,18 +27,25 @@ namespace SanatOkulu
             cboSanatci.DataSource = db.Sanatcilar.OrderBy(x => x.Ad).ToList();
             cboSanatci.ValueMember = "Id";
             cboSanatci.DisplayMember = "Ad";
+            cboSanatci.SelectedIndex = -1;
         }
 
         private void pboYeniSanatci_Click(object sender, EventArgs e)
         {
-            var frm = new SanatciForm(db);
-            if (DialogResult.OK==frm.ShowDialog())
-            {
-                SanatcilariYukle();
-            }
-            frm.ShowDialog();
+            SanatciFormuAc();
         }
 
+         void SanatciFormuAc()
+        {
+            var frm = new SanatciForm(db);
+            frm.SanatcilarDegisti += Frm_SanatcilarDegisti;
+            frm.ShowDialog();
+        }
+        private void Frm_SanatcilarDegisti(object sender, EventArgs e)
+        {
+            EserleriListele();
+            SanatcilariYukle();
+        }
         private void btnEkle_Click(object sender, EventArgs e)
         {
             string ad = txtAd.Text.Trim();
@@ -57,7 +64,7 @@ namespace SanatOkulu
             {
                 Ad = ad,
                 SanatciId = (int)cboSanatci.SelectedValue,
-                Yil = Convert.ToInt32(mtbYil.Text)
+                Yil =mtbYil.Text==""?null as int?: Convert.ToInt32(mtbYil.Text)
             };
             db.Eserler.Add(eser);
             db.SaveChanges();
@@ -69,7 +76,7 @@ namespace SanatOkulu
         {
             lvwEserler.Items.Clear();
 
-            foreach (Eser eser in db.Eserler)
+            foreach (Eser eser in db.Eserler.OrderBy(x=>x.Yil))
             {
                 ListViewItem lvi = new ListViewItem(eser.Ad);
                 lvi.SubItems.Add(eser.Sanatci.Ad);
@@ -84,6 +91,11 @@ namespace SanatOkulu
             mtbYil.Clear();
             cboSanatci.SelectedIndex = -1;
             txtAd.Focus();
+        }
+
+        private void tsmiSanatcilar_Click(object sender, EventArgs e)
+        {
+            SanatciFormuAc();
         }
     }
 }
