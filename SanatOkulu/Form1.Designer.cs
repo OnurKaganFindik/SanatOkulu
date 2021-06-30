@@ -211,10 +211,6 @@ namespace SanatOkulu
             this.tsmiSanatcilar.Text = "Sanatçılar";
             this.tsmiSanatcilar.Click += new System.EventHandler(this.tsmiSanatcilar_Click);
             // 
-            // ofdResim
-            // 
-            this.ofdResim.FileName = "openFileDialog1";
-            // 
             // pboResim
             // 
             this.pboResim.Location = new System.Drawing.Point(12, 257);
