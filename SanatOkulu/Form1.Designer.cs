@@ -37,22 +37,24 @@ namespace SanatOkulu
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboSanatci = new System.Windows.Forms.ComboBox();
             this.pboYeniSanatci = new System.Windows.Forms.PictureBox();
+            this.btnIptal = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
             this.mtbYil = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lvwEserler = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiSanatcilar = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnIptal = new System.Windows.Forms.Button();
+            this.ofdResim = new System.Windows.Forms.OpenFileDialog();
+            this.pboResim = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboYeniSanatci)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboResim)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +79,7 @@ namespace SanatOkulu
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 324);
+            this.groupBox1.Size = new System.Drawing.Size(506, 226);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sanat Eseri";
@@ -88,14 +90,14 @@ namespace SanatOkulu
             this.cboSanatci.FormattingEnabled = true;
             this.cboSanatci.Location = new System.Drawing.Point(7, 126);
             this.cboSanatci.Name = "cboSanatci";
-            this.cboSanatci.Size = new System.Drawing.Size(202, 28);
+            this.cboSanatci.Size = new System.Drawing.Size(447, 28);
             this.cboSanatci.TabIndex = 4;
             // 
             // pboYeniSanatci
             // 
             this.pboYeniSanatci.BackgroundImage = global::SanatOkulu.Properties.Resources.plus;
             this.pboYeniSanatci.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pboYeniSanatci.Location = new System.Drawing.Point(215, 126);
+            this.pboYeniSanatci.Location = new System.Drawing.Point(465, 126);
             this.pboYeniSanatci.Name = "pboYeniSanatci";
             this.pboYeniSanatci.Size = new System.Drawing.Size(35, 28);
             this.pboYeniSanatci.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,10 +105,21 @@ namespace SanatOkulu
             this.pboYeniSanatci.TabStop = false;
             this.pboYeniSanatci.Click += new System.EventHandler(this.pboYeniSanatci_Click);
             // 
+            // btnIptal
+            // 
+            this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIptal.Location = new System.Drawing.Point(280, 191);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(97, 29);
+            this.btnIptal.TabIndex = 3;
+            this.btnIptal.Text = "İptal";
+            this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnEkle
             // 
             this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEkle.Location = new System.Drawing.Point(112, 247);
+            this.btnEkle.Location = new System.Drawing.Point(403, 191);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(97, 29);
             this.btnEkle.TabIndex = 3;
@@ -144,7 +157,7 @@ namespace SanatOkulu
             // 
             this.txtAd.Location = new System.Drawing.Point(10, 62);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(240, 26);
+            this.txtAd.Size = new System.Drawing.Size(490, 26);
             this.txtAd.TabIndex = 1;
             // 
             // lvwEserler
@@ -157,9 +170,9 @@ namespace SanatOkulu
             this.columnHeader2,
             this.columnHeader3});
             this.lvwEserler.HideSelection = false;
-            this.lvwEserler.Location = new System.Drawing.Point(279, 35);
+            this.lvwEserler.Location = new System.Drawing.Point(524, 35);
             this.lvwEserler.Name = "lvwEserler";
-            this.lvwEserler.Size = new System.Drawing.Size(575, 516);
+            this.lvwEserler.Size = new System.Drawing.Size(543, 592);
             this.lvwEserler.TabIndex = 2;
             this.lvwEserler.UseCompatibleStateImageBehavior = false;
             this.lvwEserler.View = System.Windows.Forms.View.Details;
@@ -187,7 +200,7 @@ namespace SanatOkulu
             this.tsmiSanatcilar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(874, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1087, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -198,22 +211,26 @@ namespace SanatOkulu
             this.tsmiSanatcilar.Text = "Sanatçılar";
             this.tsmiSanatcilar.Click += new System.EventHandler(this.tsmiSanatcilar_Click);
             // 
-            // btnIptal
+            // ofdResim
             // 
-            this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIptal.Location = new System.Drawing.Point(6, 247);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(97, 29);
-            this.btnIptal.TabIndex = 3;
-            this.btnIptal.Text = "İptal";
-            this.btnIptal.UseVisualStyleBackColor = true;
-            this.btnIptal.Click += new System.EventHandler(this.button1_Click);
+            this.ofdResim.FileName = "openFileDialog1";
+            // 
+            // pboResim
+            // 
+            this.pboResim.Location = new System.Drawing.Point(12, 257);
+            this.pboResim.Name = "pboResim";
+            this.pboResim.Size = new System.Drawing.Size(506, 375);
+            this.pboResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboResim.TabIndex = 4;
+            this.pboResim.TabStop = false;
+            this.pboResim.Click += new System.EventHandler(this.pboResim_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 568);
+            this.ClientSize = new System.Drawing.Size(1087, 644);
+            this.Controls.Add(this.pboResim);
             this.Controls.Add(this.lvwEserler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -227,6 +244,7 @@ namespace SanatOkulu
             ((System.ComponentModel.ISupportInitialize)(this.pboYeniSanatci)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,7 +258,6 @@ namespace SanatOkulu
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAd;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pboYeniSanatci;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.ListView lvwEserler;
@@ -251,6 +268,8 @@ namespace SanatOkulu
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSanatcilar;
         private System.Windows.Forms.Button btnIptal;
+        private System.Windows.Forms.OpenFileDialog ofdResim;
+        private System.Windows.Forms.PictureBox pboResim;
     }
 }
 

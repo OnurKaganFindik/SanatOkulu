@@ -20,6 +20,7 @@ namespace SanatOkulu
             SanatcilariYukle();
             EserleriListele();
 
+
         }
 
         private void SanatcilariYukle()
@@ -155,6 +156,15 @@ namespace SanatOkulu
         {
             FormuResetle();
 
+        }
+
+        private void pboResim_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = ofdResim.ShowDialog();
+            if (dr==DialogResult.OK)
+            {
+                pboResim.Image = Image.FromFile(ofdResim.FileName);
+            }
         }
     }
 }
