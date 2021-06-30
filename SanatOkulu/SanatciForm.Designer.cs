@@ -30,7 +30,7 @@ namespace SanatOkulu
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnEkle = new System.Windows.Forms.Button();
+            this.btnEkle = new System.Windows.Forms.Button();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.btnIptal = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
@@ -48,15 +48,15 @@ namespace SanatOkulu
             this.label1.TabIndex = 0;
             this.label1.Text = "Sanatçının Adı";
             // 
-            // BtnEkle
+            // btnEkle
             // 
-            this.BtnEkle.Location = new System.Drawing.Point(223, 38);
-            this.BtnEkle.Name = "BtnEkle";
-            this.BtnEkle.Size = new System.Drawing.Size(107, 46);
-            this.BtnEkle.TabIndex = 1;
-            this.BtnEkle.Text = "Ekle";
-            this.BtnEkle.UseVisualStyleBackColor = true;
-            this.BtnEkle.Click += new System.EventHandler(this.BtnEkle_Click);
+            this.btnEkle.Location = new System.Drawing.Point(223, 38);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(107, 46);
+            this.btnEkle.TabIndex = 1;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtAd
             // 
@@ -129,7 +129,7 @@ namespace SanatOkulu
             this.Controls.Add(this.btnDuzenle);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.BtnEkle);
+            this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -143,7 +143,7 @@ namespace SanatOkulu
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnEkle;
+        private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Button btnIptal;
         private System.Windows.Forms.Button btnSil;

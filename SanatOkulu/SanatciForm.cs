@@ -22,7 +22,7 @@ namespace SanatOkulu
             Listele();
         }
 
-        private void BtnEkle_Click(object sender, EventArgs e)
+        private void btnEkle_Click(object sender, EventArgs e)
         {
             string ad = txtAd.Text.Trim();
             if (ad == "")
@@ -80,7 +80,7 @@ namespace SanatOkulu
 
             duzenlenen = (Sanatci)lstSanatcilar.SelectedItem;
             txtAd.Text = duzenlenen.Ad;
-            BtnEkle.Text = "Kaydet";
+            btnEkle.Text = "Kaydet";
             btnIptal.Show();
             lstSanatcilar.Enabled = false;
             btnDuzenle.Enabled = false;
@@ -96,7 +96,7 @@ namespace SanatOkulu
         {
             txtAd.Clear();
             duzenlenen = null;
-            BtnEkle.Text = "Ekle";
+            btnEkle.Text = "Ekle";
             btnIptal.Hide();
             lstSanatcilar.Enabled = btnDuzenle.Enabled = btnSil.Enabled = true;
         }

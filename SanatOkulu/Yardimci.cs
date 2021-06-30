@@ -20,7 +20,6 @@ namespace SanatOkulu
             string uzanti = fi.Extension;
             string yeniDosyaAd = Guid.NewGuid().ToString() + uzanti;
             string resimlerDizini = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
             string kaydetDizini = Path.Combine(resimlerDizini, "SanatOkulu_Tablolar");
             string kaydetYol = Path.Combine(kaydetDizini, yeniDosyaAd);
 
@@ -39,7 +38,6 @@ namespace SanatOkulu
                 return null;
             }
             string resimlerDizini = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
             string resimYolu = Path.Combine(resimlerDizini, "SanatOkulu_Tablolar",filename);
             return Image.FromFile(resimYolu);
         }
